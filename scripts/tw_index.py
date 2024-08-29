@@ -17,11 +17,13 @@ def main(config):
     #print(cfg)
     meta_dataset = group_metadata(config["input_data"].values(), "dataset")
     meta = group_metadata(config["input_data"].values(), "alias")
+    models = []
     rd_list_models = []
     regressors_members = {}
     for dataset, dataset_list in meta_dataset.items(): ####DATASET es el modelo
         if dataset != "GISS-E2-1-G":
             print(f"Preparing data for regression for {dataset}\n")
+            models.append(dataset)
             rd_list_members = []
             for alias, alias_list in meta.items(): ###ALIAS son los miembros del ensemble para el modelo DATASET
                 ts_dict = {m["variable_group"]: xr.open_dataset(m["filename"])[m["short_name"]].sel(time=slice('2070','2099')).mean(dim='time') - xr.open_dataset(m["filename"])[m["short_name"]].sel(time=slice('1950','1979')).mean(dim='time') for m in alias_list if (m["dataset"] == dataset)}
@@ -48,6 +50,8 @@ def main(config):
         list_values = [np.mean(regressors_members[dataset][rd]) for dataset, dataset_list in meta_dataset.items() if dataset != 'GISS-E2-1-G']
         print(len(list_values))
         regressors[rd] = np.array(list_values)
+        
+    regressors['model'] = models
     
     #Find index limits
     ta_gw = regressors['ta'] / regressors['gw']
@@ -67,7 +71,7 @@ def main(config):
     os.makedirs("remote_drivers",exist_ok=True)
     df = pd.DataFrame(regressors)
     df.to_csv(config["work_dir"]+'/remote_drivers_tropical_warming_global_warming.csv')
-    df = pd.DataFrame(index_limits)
+    df = pd.DataFrame(index_limits,index=[0])
     df.to_csv(config["work_dir"]+'/remote_drivers_tropical_warming_global_warming_bounds.csv')
 
 if __name__ == "__main__":

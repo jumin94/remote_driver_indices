@@ -1193,6 +1193,9 @@ datasets_Amon: &dAmon
   - ssp585
   grid: gn
   project: CMIP6
+  supplementary_variables:
+    - short_name: areacella
+      skip: true
 - dataset: UKESM1-0-LL
   ensemble: r4i1p1f2
   exp:
@@ -1200,6 +1203,9 @@ datasets_Amon: &dAmon
   - ssp585
   grid: gn
   project: CMIP6
+  supplementary_variables:
+    - short_name: areacella
+      skip: true
 - dataset: UKESM1-0-LL
   ensemble: r1i1p1f2
   exp:
@@ -1207,6 +1213,9 @@ datasets_Amon: &dAmon
   - ssp585
   grid: gn
   project: CMIP6
+  supplementary_variables:
+    - short_name: areacella
+      skip: true
 - dataset: UKESM1-0-LL
   ensemble: r3i1p1f2
   exp:
@@ -1214,6 +1223,9 @@ datasets_Amon: &dAmon
   - ssp585
   grid: gn
   project: CMIP6
+  supplementary_variables:
+    - short_name: areacella
+      skip: true
 - dataset: UKESM1-0-LL
   ensemble: r2i1p1f2
   exp:
@@ -1221,6 +1233,9 @@ datasets_Amon: &dAmon
   - ssp585
   grid: gn
   project: CMIP6
+  supplementary_variables:
+    - short_name: areacella
+      skip: true
 - dataset: HadGEM3-GC31-MM
   ensemble: r4i1p1f3
   exp:
@@ -2871,6 +2886,9 @@ datasets_Omon: &dOmon
   - ssp585
   grid: gn
   project: CMIP6
+  supplementary_variables:
+    - short_name: areacella
+      skip: true
 - dataset: UKESM1-0-LL
   ensemble: r4i1p1f2
   exp:
@@ -2878,6 +2896,9 @@ datasets_Omon: &dOmon
   - ssp585
   grid: gn
   project: CMIP6
+  supplementary_variables:
+    - short_name: areacella
+      skip: true
 - dataset: UKESM1-0-LL
   ensemble: r1i1p1f2
   exp:
@@ -2885,6 +2906,9 @@ datasets_Omon: &dOmon
   - ssp585
   grid: gn
   project: CMIP6
+  supplementary_variables:
+    - short_name: areacella
+      skip: true
 - dataset: UKESM1-0-LL
   ensemble: r3i1p1f2
   exp:
@@ -2892,6 +2916,9 @@ datasets_Omon: &dOmon
   - ssp585
   grid: gn
   project: CMIP6
+  supplementary_variables:
+    - short_name: areacella
+      skip: true
 - dataset: UKESM1-0-LL
   ensemble: r2i1p1f2
   exp:
@@ -2899,6 +2926,9 @@ datasets_Omon: &dOmon
   - ssp585
   grid: gn
   project: CMIP6
+  supplementary_variables:
+    - short_name: areacella
+      skip: true
 - dataset: HadGEM3-GC31-MM
   ensemble: r4i1p1f3
   exp:
